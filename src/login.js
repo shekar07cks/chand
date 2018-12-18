@@ -1,42 +1,55 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import FBLogin from './components/fbLogin'
+import { Platform, StyleSheet } from 'react-native';
+import { Container, Button, Text, Icon, Content, Form, Item, Input } from 'native-base';
+import { Col, Row, Grid } from 'react-native-easy-grid';
+import styles from './styles/style';
+// import FBLogin from './components/fbLogin'
 
-const instructions = Platform.select({
-    ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-    android:
-        'Double tap R on your keyboard to reload,\n' +
-        'Shake or press menu button for dev menu',
-});
-
-export default class App extends Component {
+export default class Login extends React.Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>Welcome to React Native!</Text>
-                <Text style={styles.instructions}>To get started, edit App.js</Text>
-                <Text style={styles.instructions}>{instructions}</Text>
-                <FBLogin />
-            </View>
+            <Container>
+                {/* <Grid styles={styles.loginContainer}>
+                    <Col>
+                        <Button >
+                            <Icon name='home' />
+                            <Text>
+                                Login
+                        </Text>
+                        </Button> 
+                    </Col>
+                    <Col></Col>
+                    
+                    <Button>
+                        <Icon name='home' />
+                        <Text>
+                            SignUp
+                        </Text>
+                    </Button>   
+                </Grid>  */}
+                <Content>
+                    <Form>
+                        <Item>
+                            <Input placeholder="Username" />
+                        </Item>
+                        <Item last>
+                            <Input placeholder="Password" />
+                        </Item>
+                        <Button onPress={() => this.props.navigation.navigate('Home')}>
+                                <Icon name='home' />
+                                <Text>Login</Text>
+                            </Button>
+                        <Button>
+                            <Icon name='home' />
+                            <Text>
+                                SignUp
+                        </Text>
+                        </Button>
+                    </Form>
+                </Content>       
+                {/* <Text style={styles.welcome}>Welcome to React Native!</Text> */}
+                {/* <FBLogin /> */}
+            </Container>
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
-});

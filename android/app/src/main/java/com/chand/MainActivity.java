@@ -17,7 +17,7 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        CallbackManager mCallbackManager;
+        // CallbackManager mCallbackManager;
         return "chand";
     }
 }

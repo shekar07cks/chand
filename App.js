@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import HomeScreen from "./src/home";
+import LandingPage from "./src/landingPage";
+import Home from "./src/home";
 import Login from "./src/login";
 import _ from "lodash";
 // import { AsyncStorage } from "react-native";
@@ -12,13 +13,25 @@ import zh_CN from './src/locales/zh_CN';
 import fr_FR from './src/locales/fr_FR';
 
 const AppNavigator = createStackNavigator({
-  Home: {
-    screen: HomeScreen
+  LandingPage: {
+    screen: LandingPage,
+    navigationOptions: {
+      header: null // Will hide header for HomeScreen
+    }
   },
   Login: {
-    screen: Login
+    screen: Login,
+    navigationOptions: {
+      header: null // Will hide header for Login
+    }
   },
-});
+  Home: {
+    screen: Home,
+    navigationOptions: {
+      header: null // Will hide header for Login
+    }
+  },
+}, { initialRouteName: 'LandingPage' });
 
 const appNavigator = createAppContainer(AppNavigator);
 
