@@ -16,7 +16,9 @@
     "react-native-extended-stylesheet": "^0.11.0",
     "react-native-fbsdk": "^0.8.0",
     "react-native-gesture-handler": "^1.0.9",
-    "react-navigation": "^3.0.0"
+    "react-native-sensors": "^5.1.5",
+    "react-navigation": "^3.0.0",
+    "rxjs": "^6.3.3"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",
